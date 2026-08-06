@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gupdate xmlns="http://www.google.com/update2/response" protocol="2.0">
   <app appid="hbmjmbpifplgocnplfkjhnhambmmpgaj">
-    <updatecheck codebase="https://method-communications.github.io/offprint-public/offprint-1.2.0.crx" version="1.2.0" />
+    <updatecheck codebase="https://raw.githubusercontent.com/Method-Communications/offprint-public/main/offprint-1.2.0.crx" version="1.2.0" />
   </app>
 </gupdate>
