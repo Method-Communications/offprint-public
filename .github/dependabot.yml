@@ -1,0 +1,13 @@
+# Dependabot version updates, scoped to the ecosystems this repo actually uses.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule: { interval: "weekly" }
+    # Hold newly published versions for 7 days so freshly compromised or
+    # unstable releases are not merged the moment they appear.
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ["*"]

@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Build output
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# Environment & secrets (NEVER commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+service-account*.json
+svc*.json
+credentials.json
+
+# Logs & caches
+*.log
+.cache/
+coverage/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
