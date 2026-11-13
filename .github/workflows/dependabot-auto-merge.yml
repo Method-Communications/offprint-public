@@ -1,7 +1,8 @@
 name: Dependabot auto-merge
-# Auto-approves and enables auto-merge for PATCH-level Dependabot updates only.
-# Minor/major bumps still require a human. Once a required CI check exists on main,
-# auto-merge will additionally wait for it to pass before merging.
+# Auto-approves and enables auto-merge for PATCH and MINOR Dependabot updates.
+# Major bumps still require a human. Auto-merge only merges once every required
+# check on the default branch passes (the org security and QA gates), so those
+# gates still decide each merge.
 on: pull_request_target
 permissions:
   contents: write
@@ -15,8 +16,8 @@ jobs:
         id: meta
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Approve + auto-merge (patch only)
-        if: ${{ steps.meta.outputs.update-type == 'version-update:semver-patch' }}
+      - name: Approve + auto-merge (patch and minor)
+        if: ${{ steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor' }}
         run: |
           gh pr review --approve "$PR_URL"
           gh pr merge --auto --squash "$PR_URL"
